@@ -1,19 +1,29 @@
-import { Component } from '@angular/core';
+import { ChildComponent } from './ChildComponent';
+import { Component, ViewChild } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
   template: `
     <h1>Selamat Datang di {{title}}</h1>
-    <child-component [count]=Counter (countChanged)="countChangedHandler($event)"></child-component>
+    <p>current count is {{child.count}}</p>
+    <button (click)="increment()">Increment</button>
+    <button (click)="decrement()">Decrement</button>
+    <child-component></child-component>
   `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'ComponentCommunication';
-  Counter = 5
- //test
-  countChangedHandler(count: number){
-    this.Counter = count
-    console.log(count);
+
+  @ViewChild(ChildComponent) child: ChildComponent | any
+
+  increment(){
+    this.child.increment
   }
+
+  decrement(){
+    this.child.decrement
+  }
+
 }
