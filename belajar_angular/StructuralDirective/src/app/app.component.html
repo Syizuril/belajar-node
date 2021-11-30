@@ -1,0 +1,114 @@
+<h1>ngIf</h1>
+
+<div class="row">
+    Show <input type="checkbox" [(ngModel)]="showMe">
+</div>
+
+<h1>ngIf</h1>
+
+<p *ngIf="showMe">
+    ShowMe is checked
+</p>
+
+<p *ngIf="!showMe">
+    ShowMe is unchecked
+</p>
+
+<h1>ngIf Else</h1>
+
+<p *ngIf="showMe; else elseBlock1">
+    Show Me is checked
+</p>
+
+<ng-template #elseBlock1>
+    <p>Show Me is unchecked using elseBlock</p>
+</ng-template>
+
+<h1>ngIf then else</h1>
+
+<p *ngIf="showMe; then thenBlock2 else elseBlock2">
+    This is not rendered
+</p>
+
+<ng-template #thenBlock2>
+    <p>ShowMe is checked Using thenbloc</p>
+</ng-template>
+
+<ng-template #elseBlock2>
+    <p>ShowMe is unchecked using elseblock</p>
+</ng-template>
+
+<h1>using hidden </h1>
+
+<p [hidden]="showMe">
+    content to render, when the condition is true using hidden property binding
+</p>
+
+<p [hidden]="!showMe">
+    content to render, when the condition is false. using hidden property binding
+</p>
+
+<h1>NgClass</h1>
+
+<p> NgClass with a String </p>
+
+<div [ngClass]="'red size20'">Red text with Size 20px</div>
+
+<p> NgClass with Array</p>
+
+<div [ngClass]="['red', 'size20']">Red text with Size 20px</div>
+
+<p> NgClass with Object</p>
+
+<div class="row">
+    <div [ngClass]="{'red':true, 'size20':true}">Red Text 20px</div>
+</div>
+
+<h1>Dynamic Updating Class</h1>
+
+<div class="row">
+    <div [ngClass]="cssStringVar">Red Text with Size 20px from component</div>
+</div>
+
+<div class="row">
+    <div [ngClass]="cssArray">Red Text with Size 20px from Array</div>
+</div>
+
+<div class="row">
+    <div [ngClass]="cssClass">Red Text with Size 20px from Object Class</div>
+</div>
+
+<h1> ngStyle </h1>
+
+<input [(ngModel)]="color">
+<div [ngStyle]="{'color': color}">Ubah warna ini</div>
+
+<h1> NgFor Data </h1>
+
+<ul>
+    <li *ngFor="let movie of movies; let i=index; trackBy: trackByFn">
+        {{i}}. {{movie.title}} - {{movie.director}} <button (click)="remove(i)">remove</button>
+    </li>
+</ul>
+<button (click)="Refresh()">Refresh</button><br> <br> Title : <input type="text" [(ngModel)]="mTitle"> Director : <input type="text" [(ngModel)]="mDirector">
+<button (click)="addMovie()">Add</button>
+<h1>Costum Directive</h1>
+<button [ttClass]="'blue'">Click Me</button>
+<h1>Costum Structural Directive</h1>
+Show Me
+<input type="checkbox" [(ngModel)]="show">
+
+<div *ttIf="show">
+    Using the ttIf directive
+</div>
+<div *ngIf="show">
+    Using the ngIf directive
+</div>
+
+<h2>Toggle Directive</h2>
+
+<button ttToggle>Click to Toggle</button>
+
+<h2>Tooltip</h2>
+
+<button ttToolTip toolTip="Tip of the day">Show Tip</button>
