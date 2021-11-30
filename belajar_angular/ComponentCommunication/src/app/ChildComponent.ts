@@ -1,25 +1,26 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { EventEmitter } from '@angular/core';
+import { Component, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'child-component',
   template: `<h2>Child Component</h2>
+  <button (click)="increment()">Increment</button>
+    <button (click)="decrement()">Decrement</button>
   current count is {{count}}`
 })
 
-export class ChildComponent implements OnChanges{
+export class ChildComponent{
+  @Input() count!: number
+  @Output() countChanged: EventEmitter<number> = new EventEmitter()
 
-  ngOnChanges(changes: SimpleChanges): void {
-    for(let property in changes){
-      if(property === 'count'){
-        console.log('Previous', changes[property].previousValue);
-        console.log('Current', changes[property].currentValue)
-        console.log('FirstChange', changes[property].firstChange)
-      }
-    }
+  increment(){
+    this.count++
+    this.countChanged.emit(this.count)
   }
 
-  @Input(`MyCount`)
-  count!: number;
+  decrement(){
+    this.count--
+    this.countChanged.emit(this.count)
+  }
 
-  private _count = 0;
 }
