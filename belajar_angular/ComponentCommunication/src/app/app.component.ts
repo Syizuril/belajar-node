@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ComponentCommunication';
   Counter = 5
-
+ //test
   countChangedHandler(count: number){
     this.Counter = count
     console.log(count);
