@@ -1,0 +1,57 @@
+<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+    <p>
+        <label for="firstname">Fistname</label>
+        <input type="text" id="firstname" name="firstname" ngModel>
+    </p>
+    <p>
+        <label for="lastname">Lastname</label>
+        <input type="text" id="lastname" name="lastname" ngModel>
+    </p>
+    <p>
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" ngModel>
+    </p>
+    <p>
+        <label for="gender">Gender</label>
+        <input type="radio" value="male" id="gender" name="gender" ngModel>Male
+        <input type="radio" value="female" name="gender" id="gender" ngModel>Female
+    </p>
+    <p>
+        <label for="isMarried">Married</label>
+        <input type="checkbox" name="isMarried" id="isMarried" ngModel>
+    </p>
+
+    <p>
+        <label for="country"></label>
+        <select name="country" id="country" ngModel>
+      <option value="" selected=""></option>
+      <option [ngValue]="c.id" *ngFor="let c of countryList">
+        {{c.name}}
+      </option>
+    </select>
+    </p>
+
+    <div ngModelGroup="address">
+        <p>
+            <label for="city">City</label>
+            <input type="text" name="city" ngModel>
+        </p>
+        <p>
+            <label for="street">Street</label>
+            <input type="text" name="street" ngModel>
+        </p>
+        <p>
+            <label for="pincode">Kode Pos</label>
+            <input type="text" name="pincode" ngModel>
+        </p>
+    </div>
+
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+
+    <pre>Value : {{contactForm.value | json}}</pre>
+    <pre>Valid : {{contactForm.valid}}</pre>
+    <pre>Touched: {{contactForm.touched}}</pre>
+    <pre>Submitted: {{contactForm.submitted}}</pre>
+</form>
