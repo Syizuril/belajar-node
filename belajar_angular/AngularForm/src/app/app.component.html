@@ -50,6 +50,15 @@
         <button type="submit">Submit</button>
     </p>
 
+    <p>
+        <button type="button" (click)="changeCountry()">Change Country</button>
+        <button type="button" (click)="setDefaults()">Set Defaults</button>
+        <button type="button" (click)="patchValue()">Patch Value</button>
+        <button type="button" (click)="changeAddress()">Change Address</button>
+        <button type="button" (click)="reset()">Reset</button>
+        <button type="button" (click)="resetForm()">Reset Form</button>
+    </p>
+
     <pre>Value : {{contactForm.value | json}}</pre>
     <pre>Valid : {{contactForm.valid}}</pre>
     <pre>Touched: {{contactForm.touched}}</pre>
