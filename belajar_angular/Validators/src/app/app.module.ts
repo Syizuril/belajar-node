@@ -1,5 +1,4 @@
-import { LoggerService } from './logger.service';
-import { ProductService } from './product.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,9 +11,11 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [ProductService,LoggerService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
