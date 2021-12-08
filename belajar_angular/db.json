@@ -1,0 +1,24 @@
+{
+  "people": [
+    {
+      "id": 1,
+      "name": "Andi Budiman"
+    },
+    {
+      "id": 2,
+      "name": "Nani Suliwati"
+    },
+    {
+      "name": "Aneh ane",
+      "id": 3
+    },
+    {
+      "name": "Budi",
+      "id": 4
+    },
+    {
+      "name": "Budi",
+      "id": 5
+    }
+  ]
+}
