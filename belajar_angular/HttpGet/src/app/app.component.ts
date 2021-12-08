@@ -11,6 +11,8 @@ import { catchError } from 'rxjs';
 export class AppComponent {
   title = 'HttpGet';
   userName: string = "Syizuril"
+  pageNo: string = '1'
+  sortOn: string= 'description'
   repos?: repos[]
 
   loading: boolean = false
@@ -23,7 +25,7 @@ export class AppComponent {
   public getRepos(){
     this.loading = true
     this.errorMessage = ""
-    this.githubService.getRepos(this.userName)
+    this.githubService.getRepos(this.userName, this.pageNo, this.sortOn)
     .subscribe({
       next: (res) => {
         console.log('Response received');

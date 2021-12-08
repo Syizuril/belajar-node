@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from "@angular/core";
 
 @Injectable()
@@ -9,7 +9,11 @@ export class GithubService {
   constructor(private http: HttpClient){
   }
 
-  getRepos(userName: string): Observable<any>{
-    return this.http.get(this.baseURL+'users/'+userName+'/repos')
+  getRepos(userName: string, PageNo: string, SortOn: string): Observable<any>{
+    let params = new HttpParams()
+    .set('page',PageNo)
+    .set('sort',SortOn)
+
+    return this.http.get(this.baseURL+'users/'+userName+'/repos', {params})
   }
 }

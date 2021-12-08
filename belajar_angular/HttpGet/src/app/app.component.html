@@ -1,8 +1,14 @@
 <h1 class="heading"><strong>HTTP</strong> Demo</h1>
 
 <div class="form-group">
-    <label for="userName">GitHub User Name</label>
-    <input type="text" name="userName" id="userName" class="form-control" [(ngModel)]="userName">
+    <label for="userName">User Name</label>
+    <input type="text" class="form-control" name="userName" [(ngModel)]="userName">
+
+    <label for="pageNo">Page No</label>
+    <input type="text" class="form-control" name="pageNo" [(ngModel)]="pageNo">
+
+    <label for="sortOn">Sorted On</label>
+    <input type="text" class="form-control" name="sortOn" [(ngModel)]="sortOn">
 </div>
 
 <div class="form-group">
