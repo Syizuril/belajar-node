@@ -14,6 +14,7 @@ export class AppComponent {
 
   // }
 
+
   // this.mainForm = this.bulder.group({
   //   userName: ["". [Validators.required, Validators.minLength(10)]],
   //   password: ["", [Validators.required]]
