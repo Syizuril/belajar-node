@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.queryParamMap.subscribe(params => {
-      this.retUrl = params.get('retUrl')!
+      this.retUrl = params.get('retUrl') || ""
       console.log('LoginComponen/ngOnInit'+this.retUrl)
     })
   }
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 
   onFormSubmit(loginForm: any){
     this.authService.login(loginForm.value.username, loginForm.value.password).subscribe( data => {
-      console.log('return to '+this.retUrl);
+      console.log('return to '+data+" "+this.retUrl);
       if(this.retUrl!==null){
         this.router.navigate([this.retUrl])
       }else{

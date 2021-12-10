@@ -1,3 +1,6 @@
+import { ProductEditComponent } from './product-edit.component';
+import { ProductViewComponent } from './product-view.component';
+import { ProductAddComponent } from './product-add.component';
 import { LoginComponent } from './login.component';
 import { AuthGuardService } from './auth-guard.service';
 import { ProductGuardService } from './product-guard.service';
@@ -19,7 +22,7 @@ import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
-    AppComponent, ProductComponent, ContactComponent, ProductComponent, ErrorComponent, ProductDetailComponent, LoginComponent
+    AppComponent, ProductComponent, ContactComponent, ProductComponent, ErrorComponent, ProductDetailComponent, LoginComponent, ProductAddComponent, ProductViewComponent, ProductEditComponent
   ],
   imports: [
     BrowserModule,

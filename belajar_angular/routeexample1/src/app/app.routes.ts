@@ -1,3 +1,6 @@
+import { ProductAddComponent } from './product-add.component';
+import { ProductEditComponent } from './product-edit.component';
+import { ProductViewComponent } from './product-view.component';
 import { ProductGuardService } from './product-guard.service';
 import { ProductSpecComponent } from './product-spec.component';
 import { ProductOverviewComponent } from './product-overview.component';
@@ -14,14 +17,12 @@ export const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'product', component: ProductComponent, canActivate: [AuthGuardService],
-  children: [
-    { path:'detail/:id', component: ProductDetailComponent,
+  {path: 'product', component: ProductComponent, canActivate: [AuthGuardService], canActivateChild:[AuthGuardService],
     children: [
-      {path: 'overview', component: ProductOverviewComponent},
-      {path: 'spec', component: ProductSpecComponent},
-      {path: '', redirectTo:'overview', pathMatch:"full"}
-    ] }]},
+      {path: 'view/:id', component: ProductViewComponent},
+      {path: 'edit/:id', component: ProductEditComponent},
+      {path: 'add', component: ProductAddComponent}
+    ] },
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: '**', component: ErrorComponent}
 ]
