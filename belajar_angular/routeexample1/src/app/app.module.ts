@@ -1,3 +1,4 @@
+import { ProductGuardService } from './../product-guard.service';
 import { ProductDetailComponent } from './product-detail.component';
 import { appRoutes } from './app.routes';
 import { FormsModule } from '@angular/forms';
@@ -25,7 +26,7 @@ import { ProductService } from './product.service';
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ProductService],
+  providers: [ProductService, ProductGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

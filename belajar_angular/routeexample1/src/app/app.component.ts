@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'routeexample1';
+  title = 'Routing Module';
+
+  pageNum=0
 }
