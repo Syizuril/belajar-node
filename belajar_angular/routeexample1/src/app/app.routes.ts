@@ -1,4 +1,4 @@
-import { ProductGuardService } from './../product-guard.service';
+import { ProductGuardService } from './product-guard.service';
 import { ProductSpecComponent } from './product-spec.component';
 import { ProductOverviewComponent } from './product-overview.component';
 import { ProductComponent } from './product.component';
@@ -7,11 +7,14 @@ import { Routes } from "@angular/router";
 import { HomeComponent } from './home.component';
 import { ErrorComponent } from './error.component';
 import { ProductDetailComponent } from './product-detail.component';
+import { AuthGuardService } from './auth-guard.service';
+import { LoginComponent } from './login.component';
 
 export const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'contact', component: ContactComponent},
-  {path: 'product', component: ProductComponent, canActivate: [ProductGuardService],
+  {path: 'login', component: LoginComponent},
+  {path: 'product', component: ProductComponent, canActivate: [AuthGuardService],
   children: [
     { path:'detail/:id', component: ProductDetailComponent,
     children: [

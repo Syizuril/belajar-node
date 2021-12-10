@@ -18,8 +18,10 @@ export class ProductOverviewComponent {
   ngOnInit(){
     this.sub = this._Activateroute.parent?.params.subscribe(params => {
       this.id = params['id']
-      let product = this._productService.getProducts()
-      this.product = product.find(p=> p.productID == this.id)
+      this._productService.getProducts().subscribe(data => {
+        let product = data;
+        this.product = product.find(p => p.productID == this.id)
+      })
     })
   }
 

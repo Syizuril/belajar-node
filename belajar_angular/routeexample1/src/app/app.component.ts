@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { AuthService } from './auth.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,5 +10,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Routing Module';
 
-  pageNum=0
+  constructor(private _authService: AuthService, private _router: Router){
+
+  }
+
+  logout(){
+    this._authService.loggoutUser()
+    this._router.navigate(['home'])
+  }
 }

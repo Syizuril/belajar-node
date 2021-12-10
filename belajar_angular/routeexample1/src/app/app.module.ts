@@ -1,4 +1,6 @@
-import { ProductGuardService } from './../product-guard.service';
+import { LoginComponent } from './login.component';
+import { AuthGuardService } from './auth-guard.service';
+import { ProductGuardService } from './product-guard.service';
 import { ProductDetailComponent } from './product-detail.component';
 import { appRoutes } from './app.routes';
 import { FormsModule } from '@angular/forms';
@@ -13,10 +15,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductService } from './product.service';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
-    AppComponent, ProductComponent, ContactComponent, ProductComponent, ErrorComponent, ProductDetailComponent
+    AppComponent, ProductComponent, ContactComponent, ProductComponent, ErrorComponent, ProductDetailComponent, LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,7 @@ import { ProductService } from './product.service';
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ProductService, ProductGuardService],
+  providers: [ProductService, ProductGuardService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
