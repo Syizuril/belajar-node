@@ -1,3 +1,5 @@
+import { DeactivateGuard } from './deactivateguard.service';
+import { RegisterComponent } from './register.component';
 import { ProductEditComponent } from './product-edit.component';
 import { ProductViewComponent } from './product-view.component';
 import { ProductAddComponent } from './product-add.component';
@@ -22,7 +24,7 @@ import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
-    AppComponent, ProductComponent, ContactComponent, ProductComponent, ErrorComponent, ProductDetailComponent, LoginComponent, ProductAddComponent, ProductViewComponent, ProductEditComponent
+    AppComponent, ProductComponent, ContactComponent, ProductComponent, ErrorComponent, ProductDetailComponent, LoginComponent, ProductAddComponent, ProductViewComponent, ProductEditComponent, RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,7 @@ import { AuthService } from './auth.service';
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ProductService, ProductGuardService, AuthService, AuthGuardService],
+  providers: [ProductService, ProductGuardService, AuthService, AuthGuardService, DeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
