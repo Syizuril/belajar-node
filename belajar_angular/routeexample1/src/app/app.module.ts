@@ -1,3 +1,4 @@
+import { ProductListResolverService } from './product-list-resolver.servic';
 import { DeactivateGuard } from './deactivateguard.service';
 import { RegisterComponent } from './register.component';
 import { ProductEditComponent } from './product-edit.component';
@@ -34,7 +35,7 @@ import { AuthService } from './auth.service';
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ProductService, ProductGuardService, AuthService, AuthGuardService, DeactivateGuard],
+  providers: [ProductService, ProductGuardService, AuthService, AuthGuardService, DeactivateGuard, ProductListResolverService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
