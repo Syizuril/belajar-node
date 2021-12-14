@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { ProductListResolverService } from './product-list-resolver.servic';
 import { DeactivateGuard } from './deactivateguard.service';
 import { RegisterComponent } from './register.component';
@@ -22,12 +23,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductService } from './product.service';
 import { AuthService } from './auth.service';
+import { DynamicComponent } from './dynamic.component';
+import { HomeComponent } from './home.component';
 
 @NgModule({
   declarations: [
-    AppComponent, ProductComponent, ContactComponent, ProductComponent, ErrorComponent, ProductDetailComponent, LoginComponent, ProductAddComponent, ProductViewComponent, ProductEditComponent, RegisterComponent
+    AppComponent, ProductComponent, HomeComponent, ContactComponent, ProductComponent, ErrorComponent, ProductDetailComponent, LoginComponent, ProductAddComponent, ProductViewComponent, ProductEditComponent, RegisterComponent, DynamicComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     RouterModule,

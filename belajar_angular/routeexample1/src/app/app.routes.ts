@@ -1,3 +1,4 @@
+import { DynamicComponent } from './dynamic.component';
 import { ProductListResolverService } from './product-list-resolver.servic';
 import { DeactivateGuard } from './deactivateguard.service';
 import { RegisterComponent } from './register.component';
@@ -20,6 +21,7 @@ export const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'dynamic', component: DynamicComponent},
   {path: 'register', component: RegisterComponent, canDeactivate: [DeactivateGuard]},
   {path: 'product', component: ProductComponent, canActivate: [AuthGuardService], canActivateChild:[AuthGuardService], resolve: {products: ProductListResolverService},
     children: [
