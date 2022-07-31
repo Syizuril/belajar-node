@@ -1,0 +1,26 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true
+  },
+  "extends": ["google", "plugin:prettier/recommended"],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "bracketSpacing": false,
+        "tabWidth": 2,
+        "useTabs": false,
+        "trailingComma": "all",
+        "singleQuote": true,
+        "endOfLine": "auto"
+      }
+    ],
+    "linebreak-style": ["error", "windows"]
+  }
+}
